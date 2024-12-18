@@ -1,0 +1,57 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../_config.scss' as *;
+
+%bannerCaption {
+    position: absolute;
+
+    @include typo(caption);
+}
+
+$textPlacement: (
+    start-top: (45, 20),
+    end-top: (86, 29),
+    start-middle: (147, 20),
+    end-bottom: (211, 31),
+    start-bottom: (274, 21),
+);
+
+@mixin textPlacementStart($top, $left) {
+    @extend %bannerCaption;
+    top: math.div($top, $ornamentAreaHeight) * 100%;
+    left: math.div($left, $ornamentAreaWidth) * 100%;
+}
+
+@mixin textPlacementEnd($top, $right) {
+    @extend %bannerCaption;
+    top: math.div($top, $ornamentAreaHeight) * 100%;
+    right: math.div($right, $ornamentAreaWidth) * 100%;
+}
+
+.ornament-text {
+    
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: math.div(346, 390) * 100%;
+    }
+
+    @each $key, $value in $textPlacement {
+        &__text-#{$key} {
+            @if str-index($key, 'start') {
+                @include textPlacementStart(nth($value, 1), nth($value, 2));
+            } @else {
+                @include textPlacementEnd(nth($value, 1), nth($value, 2));
+            }
+        }
+    }
+
+    &__text-start-bottom {
+        max-width: math.div(236, $containerWidth) * 100%;
+    }
+
+}

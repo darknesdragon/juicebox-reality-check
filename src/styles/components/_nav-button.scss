@@ -1,0 +1,31 @@
+@use '../config' as *;
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color(line, line-stroke-light);
+    background-color: color(other, nav-bg);
+    border-radius: 200px;
+    box-shadow: 0px 4px 20px 0px #0000000D;
+    backdrop-filter: blur(120px);
+
+    @include vwUnit(width, 46);
+    @include vwUnit(height, 46);
+    @include vwUnit(padding, 4 8);
+
+    &:hover {
+        background-color: color(other, nav-bg-hover);
+    }
+
+    &__icon {
+        displaY: block;
+        @include vwUnit(width, 20);
+        @include vwUnit(height, 20);
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

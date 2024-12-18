@@ -1,0 +1,33 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../_config.scss' as *;
+
+@use 'swiper/scss';
+@use 'swiper/scss/pagination';
+
+.brand-swiper {
+    position: absolute;
+    top: math.div($swiperPosition, $containerHeight) * 100%;
+    width: 100%;
+
+    opacity: 0;
+
+    &__slide-text {
+        margin: 0;
+        text-align: center;
+        @include typo(h4);
+    }
+
+    .swiper {
+        @include vwUnit(height, 225);
+    }
+
+    .swiper-pagination-bullet {
+        background-color: color(background, light);
+        @include transition(all .3s ease);
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: color(brand-colour, primary-colour);
+    }
+}

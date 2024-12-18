@@ -1,0 +1,19 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../_config.scss' as *;
+
+.welcome-text {
+
+    position: absolute;
+    top: math.div( $ornamentAreaHeight, $containerHeight ) * 100%;
+    width: 100%;
+
+    @include vwUnit(padding-top, 24);
+    @include vwUnit(padding-bottom, 24);
+
+    &__welcome-title {
+        margin: 0;
+        text-align: center;
+        @include typo(h2);
+    }
+}

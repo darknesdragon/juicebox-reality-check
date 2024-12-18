@@ -1,0 +1,12 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../_config.scss' as *;
+
+.brand-form {
+    position: absolute;
+    top: math.div( $formTextPosition, $containerHeight ) * 100%;
+    width: 100%;
+    text-align: center;
+
+    @include typo(instruction);
+}

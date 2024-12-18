@@ -1,0 +1,90 @@
+// main Bootstrap Module
+// @use 'config/_init-bootstrap.scss';
+
+@use 'sass:map';
+@use 'sass:math';
+@use '_config.scss' as *;
+
+@font-face {
+    font-family: Bagoss TRIAL;
+    src: url(/fonts/BagossTRIALVF.ttf);
+}
+
+@font-face {
+    font-family: Sohne;
+    src: url(/fonts/Sohne-Buch.otf);
+}
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+// | Timedoor New Standard                   |
+// |_________________________________________|
+
+// --------------------------------------- 
+// root font-size variable -- start 
+// --------------------------------------- 
+
+:root {
+    @include colorVar();
+    @include fontVar();
+}
+
+// --------------------------------------- 
+// root font-size variable -- end 
+// --------------------------------------- 
+
+// --------------------------------------- 
+// style reset -- estart
+// --------------------------------------- 
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    color: color(type, light-heading);
+    background-color: color(background, dark);
+
+    @include typo(body);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include transition(all .3s ease);
+}
+
+// --------------------------------------- 
+// style reset -- end 
+// --------------------------------------- 
+
+// --------------------------------------- 
+// ratio-item class -- start 
+// --------------------------------------- 
+
+.ratio-item {
+    @extend %ratioItem;
+}
+
+// --------------------------------------- 
+// ratio-item class -- end 
+// --------------------------------------- 
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+// | CUSTOM CODE START HERE                  |
+// |_________________________________________|
+
+.container {
+    @include vwUnit(padding-right, 20);
+    @include vwUnit(padding-left, 20);
+}
+
+.highlight {
+    @include brandGradient();
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

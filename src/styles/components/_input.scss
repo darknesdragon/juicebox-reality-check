@@ -1,0 +1,48 @@
+@use '../config' as *;
+
+.brand-input {
+    position: absolute;
+    top: 0;
+    width: auto;
+    opacity: 0;
+    visibilitY: hidden;
+    @include vwUnit(right, 20);
+    @include vwUnit(left, 20);
+
+    &__input {
+        width: 100%;
+        color: color(type, caption);
+        background-color: transparent;
+        border: 1px solid color(line, line-stroke-medium);
+        border-radius: 19px;
+
+        @include vwUnit(padding-right, 55);
+        @include vwUnit(padding-left, 12);
+        @include vwUnit(height, 60);
+        @include typo(body);
+
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        color: #ffffff;
+        background-color: color(background, medium);
+        border-radius: 27px;
+        opacity: .5;
+        transform: translateY(-50%);
+
+        @include vwUnit(right, 12);
+        @include vwUnit(width, 31);
+        @include vwUnit(height, 31);
+
+        svg {
+            @include vwUnit(width, 18);
+            @include vwUnit(height, 18);
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@use '../config' as *;
+
+.brand-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 19px;
+    overflow: hidden;
+    
+    @include vwUnit(padding, 19);
+    @include typo(body);
+
+    &__text {
+        display: block;
+    }
+
+    &--primary {
+        @extend .brand-button;
+        color: color(type, dark-heading);
+        background-color: color(brand-colour, primary-colour-light);
+        &:hover {
+            background-color: colorMod(brand-colour, +25%, primary-colour-light)
+        }
+    }
+
+    &--outline {
+        @extend .brand-button;
+        color: color(type, light-heading);
+        background-color: transparent;
+        border: 1px solid color(line, line-stroke-medium);
+        &:hover {
+            background-color: color(other, nav-bg-hover);
+        }
+    }
+
+    &--secondary {
+        @extend .brand-button;
+        color: color(type, dark-heading);
+        background-color: color(brand-colour, action-colour);
+        outline: 8px solid color(background, button-background);
+    }
+}

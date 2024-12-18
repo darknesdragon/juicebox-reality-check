@@ -1,0 +1,37 @@
+@use '../config' as *;
+
+%brandFooterButton {
+    position: absolute;
+    top: 0;
+    width: auto;
+    opacity: 0;
+    visibility: hidden;
+    @include vwUnit(right, 20);
+    @include vwUnit(left, 20);
+}
+
+.brand-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    @include vwUnit(padding, 24 0);
+
+    &__home-button {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__swiper-button {
+        @extend %brandFooterButton;
+    }
+
+    &__form-button {
+        @extend %brandFooterButton;
+    }
+
+    .container {
+        position: relative;
+    }
+}

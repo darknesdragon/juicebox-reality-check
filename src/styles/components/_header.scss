@@ -1,0 +1,78 @@
+@use '../config' as *;
+
+$logoWidth : 123;
+$logoHeight : 29;
+
+@mixin logoAlphabetPosition($top, $left) {
+    position: absolute;
+    top: $top / $logoHeight * 100%;
+    left: $left / $logoWidth * 100%;
+}
+
+.brand-header {
+
+    @include vwUnit(padding, 20 0);
+
+    &__main-logo {
+        display: block;
+        position: relative;
+        width: #{$logoWidth}px;
+        height: #{$logoHeight}px;
+    }
+
+    &__logo-j-dot {
+        @include logoAlphabetPosition(0, 1.5);
+    }
+
+    &__logo-j {
+        @include logoAlphabetPosition(8.15, 0);
+    }
+
+    &__logo-u {
+        @include logoAlphabetPosition(8.75, 10.88);
+    }
+
+    &__logo-i-dot {
+        @include logoAlphabetPosition(0, 28.06);
+    }
+
+    &__logo-i {
+        @include logoAlphabetPosition(8.15, 28.06);
+    }
+
+    &__logo-c {
+        @include logoAlphabetPosition(8.15, 36.58);
+    }
+
+    &__logo-e {
+        @include logoAlphabetPosition(8.15, 53.94);
+    }
+
+    &__logo-b {
+        @include logoAlphabetPosition(1, 72.22);
+    }
+
+    &__logo-o {
+        @include logoAlphabetPosition(8.15, 90.35);
+    }
+
+    &__logo-x {
+        @include logoAlphabetPosition(8.15, 107.06);
+    }
+
+    &__refresh-button {
+        @include fullState() {
+            @include transform(rotate(-180deg));
+        }
+    }
+
+    &__prev-button {
+        opacity: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

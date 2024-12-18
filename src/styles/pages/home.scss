@@ -1,0 +1,57 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../_config.scss' as *;
+
+.main-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
+    @include vwUnit(max-width, 390);
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: math.div($containerHeight, $containerWidth) * 100%;
+    }
+
+    &__main-ornament {
+        position: absolute;
+        top: math.div($ornamentPosition, $containerHeight) * 100%;
+        left: 50%;
+        width: 100%;
+
+        @include transform(translateX(-50%));
+        @include transition(all .3s ease);
+
+        &:before {
+            content: '';
+            display: block;
+            padding-top: math.div($ornamentHeight, $ornamentWidth) * 100%;
+        }
+
+    }
+
+    &__lottie {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.step-1 {
+        .main-container__main-ornament {
+            max-width: math.div($ornamentWidth, $containerWidth) * 100%;
+        }
+    }
+    
+    &.step-2 {
+        .main-container__main-ornament {
+            max-width: math.div($ornamentWidthStep2, $containerWidth) * 100%;
+        }
+    }
+    
+    &.step-3 {
+        .main-container__main-ornament {
+            max-width: math.div($ornamentWidthStep3, $containerWidth) * 100%;
+        }
+    }
+}

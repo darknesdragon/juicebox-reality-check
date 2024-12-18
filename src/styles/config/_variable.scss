@@ -1,0 +1,170 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
+// | tmdrVar v.1.0.2                         | //
+// | last update : 03 / 04 / 2024            | //
+// |_________________________________________| //
+
+$themeUnit: 'vw';
+
+$desktopBreakpoints: (
+    1920,
+    1199,
+);
+
+$mobileBreakpoints: (
+    767,
+    575,
+    480,
+    390
+);
+
+// color example taken from Timedoor - Prime Codex Figma
+// https://www.figma.com/file/g2yHdGMKnPH04ho4YFkPuJ/Prime-Codex?type=design&node-id=201-215&mode=design&t=TV1N2RPkAGXwE5UU-0
+
+$color: (
+    brand-colour: (
+        primary-colour: #B488F2,
+        primary-colour-light: #CDAAFF,
+        action-colour: #FAFAFA
+    ),
+    type: (
+        light-heading: #FAFAFA,
+        dark-heading: #0C0D10,
+    ),
+    line: (
+        line-stroke-light: #FAFAFA,
+        line-stroke-medium: rgba(255, 255, 255, 0.6),
+    ),
+    background: (
+        button-background: rgba(255,255,255, 0.1),
+        medium: rgba(255, 255, 255, 0.6),
+        dark: #0C0D10,
+        light: #FAFAFA
+    ),
+    linear-gradient: (
+        start: #FABBFF,
+        middle: #B179FF,
+        end: #6DDDFF,
+    ),
+    other: (
+        white: #ffffff,
+        nav-bg: rgba(255,255,255,.05),
+        nav-bg-hover: rgba(255,255,255,.15)
+    )
+);
+
+// OPTIONAL - if default using color shade
+
+// $variant: (
+//     blue: (
+//         default: map.get($color, blue, 80),
+//     )
+// );
+
+// $color: map.deep-merge($color, $variant);
+
+// OPTIONAL - end
+
+//------------------------------------------------
+// Layouting Information -- Start
+//------------------------------------------------
+
+$containerWidth: 390;
+$containerHeight: 471;
+
+$ornamentPosition: 28;
+$ornamentWidth: 274;
+$ornamentWidthStep2: 174;
+$ornamentWidthStep3: 29;
+$ornamentHeight: 290;
+
+$ornamentAreaWidth: 390;
+$ornamentAreaHeight: 346;
+
+$swiperPosition: 251;
+
+$formTextPosition: 86.79;
+
+//------------------------------------------------
+// Layouting Information -- End
+//------------------------------------------------
+
+$fontSizes: (
+    body: (
+        desktop: (
+            font-family: Sohne,
+            font-size: 16,
+            font-weight: 400,
+            line-height: math.div(21.6, 16),
+            letter-spacing: 0.02em,
+            text-align: left,
+            text-underline-position: from-font,
+            text-decoration-skip-ink: none,
+        ),
+        mobile: (
+            font-size: 16
+        )
+    ),
+    h2: (
+        desktop: (
+            font-family: Bagoss TRIAL,
+            font-size: 28,
+            font-weight: 400,
+            line-height: math.div(33.6, 28),
+            letter-spacing: 0.01em,
+            text-align: center,
+            text-underline-position: from-font,
+            text-decoration-skip-ink: none,
+        ),
+        mobile: (
+            font-size: 28
+        )
+    ),
+    h4: (
+        desktop: (
+            font-family: Bagoss TRIAL,
+            font-size: 22,
+            font-weight: 400,
+            line-height: math.div(27.5, 22),
+            letter-spacing: 0.01em,
+            text-align: center,
+            text-underline-position: from-font,
+            text-decoration-skip-ink: none,
+        ),
+        mobile: (
+            font-size: 22
+        )
+    ),
+    caption: (
+        desktop: (
+            font-family: Sohne,
+            font-size: 12,
+            font-weight: 400,
+            line-height: math.div(16.2, 12),
+            letter-spacing: 0.02em,
+            text-align: left,
+            text-underline-position: from-font,
+            text-decoration-skip-ink: none,
+        ),
+        mobile: (
+            font-size: 12
+        )
+    ),
+    instruction: (
+        desktop: (
+            font-family: Bagoss TRIAL,
+            font-size: 19,
+            font-weight: 400,
+            line-height: math.div(22.8, 19),
+            letter-spacing: 0.01em,
+            text-align: center,
+            text-underline-position: from-font,
+            text-decoration-skip-ink: none,
+        ),
+        mobile: (
+            font-size: 19
+        )
+    )
+);
