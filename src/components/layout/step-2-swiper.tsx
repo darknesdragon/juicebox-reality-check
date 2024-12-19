@@ -46,7 +46,6 @@ const Step2Swiper = forwardRef<SwiperEl, SwiperProps>(({ updateSlide }, ref) => 
                 onSlideChange={(swiper) => updateSlideIdex(swiper.activeIndex) }
                 onSwiper={(swiper) => {
                     swiperInstance.current = swiper;
-                    console.log(swiper)
                 }}
             >
                 { slideData.map( (slide, index) => (

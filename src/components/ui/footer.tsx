@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {Swiper as SwiperType} from 'swiper';
 import gsap from 'gsap';
 
@@ -6,11 +6,6 @@ import Button from "@ui/buttons";
 import Input from "@ui/input";
 
 import '../../styles/components/_footer.scss';
-
-type formText = {
-    text: string;
-    name: string;
-}
 
 type footerProps = {
     data: {
