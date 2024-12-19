@@ -89,6 +89,12 @@ const Testing = () => {
                     ease: 'power4.out',
                 }
             )
+            gsap.to(
+                '.radial-gradient',
+                {
+                    scale: 2
+                }
+            )
         }
         if( step == 2 ) {
             step1El.forEach( (el) => {
@@ -133,6 +139,21 @@ const Testing = () => {
                     ease: 'power4.out',
                 }
             )
+            if ( currentSlide == 0 ) {
+                gsap.to(
+                    '.radial-gradient',
+                    {
+                        scale: 1
+                    }
+                )
+            } else {
+                gsap.to(
+                    '.radial-gradient',
+                    {
+                        scale: 2
+                    }
+                )
+            }
         } 
         if( step == 3 ) {
             gsap.to(
@@ -171,7 +192,8 @@ const Testing = () => {
     })
 
     return (
-        <>
+        <div className="main-layout">
+            <div className="radial-gradient"></div>
             <Header data={pageData} swiperRef={swiperEl} />
             <main>
                 <div className={`main-container step-${step}`}>
@@ -186,7 +208,7 @@ const Testing = () => {
                 </div>
             </main>
             <Footer data={footerData} swiperRef={swiperEl} />
-        </>
+        </div>
     );
 }
 

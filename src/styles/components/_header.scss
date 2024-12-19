@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../config' as *;
 
 $logoWidth : 123;
@@ -5,8 +6,8 @@ $logoHeight : 29;
 
 @mixin logoAlphabetPosition($top, $left) {
     position: absolute;
-    top: $top / $logoHeight * 100%;
-    left: $left / $logoWidth * 100%;
+    top: math.div($top, $logoHeight) * 100%;
+    left: math.div($left, $logoWidth) * 100%;
 }
 
 .brand-header {

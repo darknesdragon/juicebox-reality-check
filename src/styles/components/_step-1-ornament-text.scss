@@ -1,5 +1,7 @@
 @use 'sass:math';
 @use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
 @use '../_config.scss' as *;
 
 %bannerCaption {
@@ -35,17 +37,18 @@ $textPlacement: (
     width: 100%;
 
     &:before {
-        content: '';
+        content: ''; 
         display: block;
         padding-top: math.div(346, 390) * 100%;
     }
 
     @each $key, $value in $textPlacement {
+        @debug list.nth($value, 1);
         &__text-#{$key} {
-            @if str-index($key, 'start') {
-                @include textPlacementStart(nth($value, 1), nth($value, 2));
+            @if string.index($key, 'start') {
+                @include textPlacementStart(list.nth($value, 1), list.nth($value, 2));
             } @else {
-                @include textPlacementEnd(nth($value, 1), nth($value, 2));
+                @include textPlacementEnd(list.nth($value, 1), list.nth($value, 2));
             }
         }
     }

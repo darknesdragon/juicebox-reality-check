@@ -44,7 +44,6 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    height: 100dvh;
     color: color(type, light-heading);
     background-color: color(background, dark);
 
@@ -86,5 +85,28 @@ button {
 .highlight {
     @include brandGradient();
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.main-layout {
+    position: relative;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.radial-gradient {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+transform-origin: bottom;
+@include radialGradient();
+@include transform(scale(2));
+
+&:before {
+    content: '';
+    display: block;
+    padding-top: math.div(527, 390) * 100%;
+}
 }
