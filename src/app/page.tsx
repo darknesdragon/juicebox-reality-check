@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import {Swiper as SwiperType} from 'swiper';
+
 import Image from 'next/image';
 import gsap from 'gsap';
 
@@ -55,7 +57,7 @@ const Testing = () => {
         welcomeTextEl: null,
     });
 
-    const swiperEl = useRef<{ swiperEl: HTMLDivElement | null, swiper: any }>({
+    const swiperEl = useRef<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>({
         swiperEl: null,
         swiper: null
     });

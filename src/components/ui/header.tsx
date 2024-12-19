@@ -1,3 +1,4 @@
+import {Swiper as SwiperType} from 'swiper';
 import Image from 'next/image';
 import gsap from 'gsap';
 
@@ -15,7 +16,7 @@ type headerProps = {
         formState: string;
         updateFormState: React.Dispatch<React.SetStateAction<string>>;
     };
-    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: any }>;
+    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>;
 }
 
 const Header = ( { data, swiperRef } : headerProps ) => {
@@ -75,7 +76,6 @@ const Header = ( { data, swiperRef } : headerProps ) => {
     }
 
     const prevButtonFunc = () => {
-        console.log(data.formState)
         if ( data.currentStep == 2 ) {
             if ( data.currentSlide == 0 ) {
                 data.updateStep(data.currentStep - 1);

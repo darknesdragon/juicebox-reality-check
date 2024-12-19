@@ -1,4 +1,5 @@
 import React, { useState, forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
+import {Swiper as SwiperType} from 'swiper';
 import gsap from 'gsap';
 
 import Button from "@ui/buttons";
@@ -25,7 +26,7 @@ type footerProps = {
         formText: string;
         updateFormText: React.Dispatch<React.SetStateAction<string>>;
     };
-    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: any }>;
+    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>;
 };
 
 const Footer = ( { data, swiperRef } : footerProps ) => {
@@ -304,7 +305,6 @@ const Footer = ( { data, swiperRef } : footerProps ) => {
 
     useEffect(() => {
         if( data.currentStep == 1 ) {
-            console.log( 'show homeButton' )
             showHomeButton();
             swiperButtonIsShown.current = false;
         } 

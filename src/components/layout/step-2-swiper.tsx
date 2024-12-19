@@ -1,4 +1,5 @@
 import {forwardRef, useImperativeHandle, useRef} from 'react';
+import {Swiper as SwiperType} from 'swiper';
 import { Pagination, A11y } from 'swiper/modules';
 
 // Import Swiper React components
@@ -14,7 +15,7 @@ const slideData = [
 
 type SwiperEl = {
     swiperEl: HTMLDivElement | null;
-    swiper: any;
+    swiper: SwiperType | null;
 }
 
 type SwiperProps = {
@@ -24,7 +25,7 @@ type SwiperProps = {
 const Step2Swiper = forwardRef<SwiperEl, SwiperProps>(({ updateSlide }, ref) => {
 
     const swiperEl = useRef<HTMLDivElement>(null);
-    const swiperInstance = useRef<any>(null);
+    const swiperInstance = useRef<SwiperType>(null);
 
     useImperativeHandle(ref, () => ({
         swiperEl: swiperEl.current,
@@ -45,6 +46,7 @@ const Step2Swiper = forwardRef<SwiperEl, SwiperProps>(({ updateSlide }, ref) => 
                 onSlideChange={(swiper) => updateSlideIdex(swiper.activeIndex) }
                 onSwiper={(swiper) => {
                     swiperInstance.current = swiper;
+                    console.log(swiper)
                 }}
             >
                 { slideData.map( (slide, index) => (
