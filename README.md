@@ -30,3 +30,10 @@ This project use `vw` unit instead of `px` or even `rem` and `em` for font-sizin
 The reason I use `vw` instead of `px` to aim 'pixel-perfect' product, is because every device comes with different dimension. Even a same device can be proven to have different size because of other factor such as zoom and DPI setting.
 
 I'm quite happy with the result eventhough there are still many room for improvements on Next.js system.
+
+## Stack Use on This Project
+
+- Next.js
+- SASS
+- SwiperJs
+- GSAP
