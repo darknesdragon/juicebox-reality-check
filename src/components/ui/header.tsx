@@ -16,7 +16,7 @@ type headerProps = {
         formState: string;
         updateFormState: React.Dispatch<React.SetStateAction<string>>;
     };
-    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>;
+    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType | null}>;
 }
 
 const Header = ( { data, swiperRef } : headerProps ) => {

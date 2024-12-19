@@ -2,6 +2,11 @@ import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 
 import '@styles/components/_button.scss';
 
+type ButtonHandle = {
+    button: HTMLButtonElement | null;
+    span: HTMLSpanElement | null;
+};
+
 type ButtonProps = {
     text: string;
     className: string;

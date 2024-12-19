@@ -21,7 +21,7 @@ type footerProps = {
         formText: string;
         updateFormText: React.Dispatch<React.SetStateAction<string>>;
     };
-    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>;
+    swiperRef: React.RefObject<{ swiperEl: HTMLDivElement | null, swiper: SwiperType | null}>;
 };
 
 const Footer = ( { data, swiperRef } : footerProps ) => {
@@ -280,7 +280,7 @@ const Footer = ( { data, swiperRef } : footerProps ) => {
     };
 
     const submitName = () => {
-        const name = nameInputRefs.current?.input.value || '';
+        const name = nameInputRefs.current!.input!.value || '';
         if (validateName(name)) {
             data.setInputName(name);
             data.updateFormState('email');
@@ -290,7 +290,7 @@ const Footer = ( { data, swiperRef } : footerProps ) => {
     };
 
     const submitEmail = () => {
-        const email = emailInputRefs.current?.input.value || '';
+        const email = emailInputRefs.current!.input!.value || '';
         if (validateEmail(email)) {
             data.updateFormState('finish');
         } else {

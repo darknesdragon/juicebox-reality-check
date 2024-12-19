@@ -12,9 +12,10 @@ type LottieAnimationProps = {
 };
 
 const LottieAnimation: React.FC<LottieAnimationProps> = ({ animationData, width, height, className, formState }) => {
+    
     useEffect(() => {
         lottie.loadAnimation({
-            container: document.querySelector('.lottie-container'), // div id
+            container: document.querySelector('.lottie-container')!, // div id
             path: animationData, // Load animation JSON
             loop: true,
             autoplay: false,
