@@ -57,7 +57,7 @@ const Testing = () => {
         welcomeTextEl: null,
     });
 
-    const swiperEl = useRef<{ swiperEl: HTMLDivElement | null, swiper: SwiperType }>({
+    const swiperEl = useRef<{ swiperEl: HTMLDivElement | null, swiper: SwiperType | null }>({
         swiperEl: null,
         swiper: null
     });
