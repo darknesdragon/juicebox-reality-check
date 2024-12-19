@@ -20,9 +20,7 @@ const Step3orm = forwardRef<formTextEl, formTextProps>(({text}, ref) => {
 
     return (
         <div className="brand-form container" ref={formTextEl}>
-            <p className="brand-form__text">
-                {text}
-            </p>
+            <p className="brand-form__text" dangerouslySetInnerHTML={{ __html: text }} />
         </div>
     );
 });

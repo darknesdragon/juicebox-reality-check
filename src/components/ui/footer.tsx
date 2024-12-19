@@ -29,7 +29,7 @@ const Footer = ( { data, swiperRef } : footerProps ) => {
     const formText = {
         'name' : 'Let’s start with the basics. Type in your first name.',
         'email' : 'How should we contact you? Type in your email address.',
-        'finish' : `Thanks, ${data.inputName}! Now, it’s time to get a reality check. This will take 2-3 minutes.`,
+        'finish' : `Thanks, ${data.inputName}! Now, it’s time to get a reality check.<br/><br/> This will take 2-3 minutes.`,
     }
 
     const homeButtonRefs = useRef<{ button: HTMLButtonElement | null; span: HTMLSpanElement | null }>({

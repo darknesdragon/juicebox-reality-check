@@ -22,11 +22,13 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({ animationData, width,
         });
     }, [animationData]);
 
-    if ( formState == 'finish' ) {
-        lottie.play()
-    } else {
-        lottie.stop()
-    }
+    useEffect(() => {
+        if ( formState == 'finish' ) {
+            lottie.play()
+        } else {
+            lottie.stop()
+        }
+    })
 
     return <div className={`lottie-container ${className}`} style={{ width, height }} />;
 };

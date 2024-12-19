@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {Swiper as SwiperType} from 'swiper';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -99,21 +100,23 @@ const Header = ( { data, swiperRef } : headerProps ) => {
         window.location.reload()
     }
 
-    if ( data.currentStep == 2 ) {
-        gsap.to(
-            '.brand-header__prev-button',
-            {
-                autoAlpha: 1,
-            }
-        )
-    } else if ( data.currentStep == 1 ) {
-        gsap.to(
-            '.brand-header__prev-button',
-            {
-                autoAlpha: 0,
-            }
-        )
-    }
+    useEffect(() => {
+        if ( data.currentStep == 2 ) {
+            gsap.to(
+                '.brand-header__prev-button',
+                {
+                    autoAlpha: 1,
+                }
+            )
+        } else if ( data.currentStep == 1 ) {
+            gsap.to(
+                '.brand-header__prev-button',
+                {
+                    autoAlpha: 0,
+                }
+            )
+        }
+    })
 
     return (
         <header className="brand-header">
