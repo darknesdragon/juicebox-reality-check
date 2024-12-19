@@ -6,9 +6,9 @@
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: clamp( 390px, 90%, 85% );
+    // max-width: clamp( 390px, 90%, 85% );
 
-    // @include vwUnit(max-width, 390);
+    @include vwUnit(max-width, 390);
 
 
     &:before {
